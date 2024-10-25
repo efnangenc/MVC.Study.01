@@ -1,0 +1,12 @@
+﻿@model MVCAttributeRoute.UI.Models.User
+
+<form asp-action="ekle" asp-controller="kullanici" method="post">
+    <label for="name"> isim </label>
+    <input type="text" name="Name" asp-for="Name" />
+    <br/>
+    <label for="email" > email</label>
+    <input type="email" name="Email" asp-for="Email"/>
+    <br/>
+    <button type="submit " asp-controller="kullanici" asp-action="ekle"> Ekle</button>
+
+</form>
