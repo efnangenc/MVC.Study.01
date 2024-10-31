@@ -1,0 +1,24 @@
+﻿@using MVC.Study._01.Context.Concrete
+
+@model IEnumerable<Urun>
+
+<div class="container mt-5">
+    <h2 class="mb-4">Urunler</h2>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">@item.UrunAdi @item.Fiyat</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">@item.UrunId</h6>
+                    <a asp-action="Edit" asp-route-id="@item.UrunId" class="btn btn-warning">Düzenle</a>
+                    <a asp-action="Delete" asp-route-id="@item.UrunId" class="btn btn-danger">Sil</a>
+                </div>
+            </div>
+        }
+
+    </div>
+    <div class="mt-5">
+        <a asp-action="Create" class="btn btn-primary">Yeni Urun Ekle</a>
+    </div>
+</div>

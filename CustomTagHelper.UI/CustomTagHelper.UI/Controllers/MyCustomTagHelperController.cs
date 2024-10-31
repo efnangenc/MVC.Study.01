@@ -19,7 +19,9 @@ namespace CustomTagHelper.UI.Controllers
             if (kullaniciAdi == "admin")
             {
                 ViewBag.Message = "Hoş Geldiniz...";
+                
                 return View("Giris");
+
             }
             ViewBag.Message = "Kullanıcı adı hatalı";
             return View("GirisYap");

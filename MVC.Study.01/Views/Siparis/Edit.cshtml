@@ -1,0 +1,22 @@
+﻿@using MVC.Study._01.Context.Concrete
+
+@model Siparis
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="SiparisId" />
+    <div class="form-group">
+        <label>Müşteri</label>
+        <select asp-for="MusteriId" class="form-control" asp-items="ViewBag.MusteriId"></select>
+    </div>
+    <div class="form-group">
+        <label>Ürün</label>
+        <select asp-for="UrunId" class="form-control" asp-items="ViewBag.UrunId"></select>
+    </div>
+    <div class="form-group">
+        <label>Siparis Tarihi</label>
+        <input asp-for="SiparisTarihi" type="date" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-info">Kaydet</button>
+</form>
+
+<a asp-action="Index" class="btn btn-outline-primary">Geri</a>

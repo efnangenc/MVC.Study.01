@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using MVC.Study._01.Context;
+
 namespace MVC.Study._01
 {
     public class Program
@@ -5,6 +8,8 @@ namespace MVC.Study._01
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddDbContext<MyDBContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("connStr")));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
